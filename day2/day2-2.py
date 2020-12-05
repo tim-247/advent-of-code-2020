@@ -2,7 +2,7 @@
 
 # functions
 
-def checkPassword (line):
+def checkPassword(line):
     # split by space
     passwordToCheck = line.split()
     # remove the colon in [1]
@@ -15,13 +15,12 @@ def checkPassword (line):
         (passwordToCheck[1] == passwordToCheck[2][int(passwordToCheck[0][1]) - 1])
         )
 
-# open input file for use
 
+# open input file for use
 with open("day2/input", "r") as input:
     inputlist = input.read().splitlines()
 
 # do the counting
-
 countValidPasswords = 0
 
 for line in inputlist:
