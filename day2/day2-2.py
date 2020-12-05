@@ -7,13 +7,13 @@ def checkPassword (line):
     passwordToCheck = line.split()
     # remove the colon in [1]
     passwordToCheck[1] = passwordToCheck[1][0]
-    # convert the min/max values to tuple
+    # convert the position values to tuple
     passwordToCheck[0] = tuple(passwordToCheck[0].split('-'))
-    # compare the values
-    if int(passwordToCheck[0][0]) <= passwordToCheck[2].count(passwordToCheck[1]) <= int(passwordToCheck[0][1]):
-        return 1
-    else:
-        return 0
+    # return 1 if conditions match ()
+    return int(
+        (passwordToCheck[1] == passwordToCheck[2][int(passwordToCheck[0][0]) - 1]) !=
+        (passwordToCheck[1] == passwordToCheck[2][int(passwordToCheck[0][1]) - 1])
+        )
 
 # open input file for use
 
