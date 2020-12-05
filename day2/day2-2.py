@@ -9,7 +9,7 @@ def checkPassword(line):
     passwordToCheck[1] = passwordToCheck[1][0]
     # convert the position values to tuple
     passwordToCheck[0] = tuple(passwordToCheck[0].split('-'))
-    # return 1 if conditions match ()
+    # boolean XOR check returns 1 if either statement is true
     return int(
         (passwordToCheck[1] == passwordToCheck[2][int(passwordToCheck[0][0]) - 1]) !=
         (passwordToCheck[1] == passwordToCheck[2][int(passwordToCheck[0][1]) - 1])
