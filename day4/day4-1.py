@@ -43,4 +43,5 @@ for line in inputlines:
         passport = {}
 
 print(max([len(p) for p in rejected_passports]))
+print(min([len(p) for p in passports]))
 print(len(passports))
