@@ -1,6 +1,3 @@
-# imports
-
-# open import file
 with open('day3/input', 'r') as input:
     inputgrid = [line for line in input.read().splitlines()]
 
@@ -13,17 +10,19 @@ class Grid:
             raise ValueError("Row lengths do not match")
         else:
             self.number_of_columns = len(self.grid[0])
-    
+  
     def get_coord(self, x_coord, y_coord, wrap=False):
-        if wrap==True:
+        if wrap is True:
             return self.grid[y_coord][x_coord % self.number_of_columns]
         else:
             return self.grid[y_coord][x_coord]
 
-    def traverse(self, start_coord:tuple, x_movement, y_movement, search_character, check_first=False):
+    def traverse(self, start_coord: tuple,
+                 x_movement, y_movement,
+                 search_character, check_first=False):
         """
         start_coord tuple should be in form (x,y) with top left being (0,0).
-        
+      
         x_movement = movement right per step
 
         y_movement = movement down per step
@@ -34,7 +33,7 @@ class Grid:
         """
         self.pointer = list(start_coord)
         characters_found = 0
-        if check_first == True:
+        if check_first is True:
             if self.get_coord(self.pointer[0], self.pointer[1], wrap=True) == search_character:
                 characters_found += 1
         while self.pointer[1] < self.number_of_rows - 1:
