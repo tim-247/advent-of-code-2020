@@ -1,5 +1,6 @@
 with open('day4/input', 'r') as input:
     inputlines = input.read().splitlines()
+inputlines.append('')
 
 
 def lineToDict(line):
@@ -44,4 +45,5 @@ for line in inputlines:
 
 print(max([len(p) for p in rejected_passports]))
 print(min([len(p) for p in passports]))
+print(len(rejected_passports))
 print(len(passports))
