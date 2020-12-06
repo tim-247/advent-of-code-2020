@@ -8,7 +8,7 @@ def lineToDict(line):
 
 
 def verifyDict(d):
-    if len(d.keys()) < 7:
+    if len(d.keys()) not in [7, 8]:
         return False
     elif len(d.keys()) == 8:
         return True
@@ -17,8 +17,6 @@ def verifyDict(d):
             return False
         else:
             return True
-    elif len(d.keys()) > 8:
-        raise ValueError("Too many fields in passport")
 
 
 def processLine(line):
@@ -42,8 +40,4 @@ for line in inputlines:
         else:
             rejected_passports.append(passport)
         passport = {}
-
-print(max([len(p) for p in rejected_passports]))
-print(min([len(p) for p in passports]))
-print(len(rejected_passports))
 print(len(passports))
