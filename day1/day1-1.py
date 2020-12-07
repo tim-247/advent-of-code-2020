@@ -2,7 +2,7 @@
 
 # create array of input numbers
 
-with open("input", "r") as input:
+with open("day1/input", "r") as input:
     inputlist = [int(i) for i in input.read().splitlines()]
 
 while len(inputlist) > 1:
