@@ -1,3 +1,9 @@
+required_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
+optional_fields = ["cid"]
+
+passports = []
+passport = {}
+
 with open('day4/input', 'r') as input:
     inputlines = input.read().splitlines()
 inputlines.append('')
@@ -24,20 +30,11 @@ def processLine(line):
     return d
 
 
-required_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
-optional_fields = ["cid"]
-
-passports = []
-rejected_passports = []
-passport = {}
-
 for line in inputlines:
     if len(line) > 0:
         passport.update(processLine(line))
     else:
         if verifyDict(passport) is True:
             passports.append(passport)
-        else:
-            rejected_passports.append(passport)
         passport = {}
 print(len(passports))
