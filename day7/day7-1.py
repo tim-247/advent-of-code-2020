@@ -37,7 +37,7 @@ class LineInspector(NodeVisitor):
         return node.text
 
     def visit_TERMINAL(self, node, visited_children):
-        parent, children, *_ = visited_children
+        parent, *_ = visited_children
         return {"parent": parent, "children": []}
 
     def generic_visit(self, node, visited_children):
