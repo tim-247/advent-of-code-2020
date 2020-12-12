@@ -24,7 +24,7 @@ class Quiz:
 quizResults = []
 for line in inputlines:
     try:
-        currentQuiz = currentQuiz
+        assert currentQuiz
     except:
         currentQuiz = Quiz()
     if len(line) > 0:
